@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Trattoria Arki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Menu.css">
+</head>
+<body class="min-h-screen font-sans">
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- Header statico: nessun link su logo e titolo -->
+  <header class="site-header sticky top-0 z-40">
+    <div class="brand">
+      <img src="logo.png" alt="Logo Trattoria Arki" class="brand-logo" width="60" height="56">
+      <div class="brand-text">
+        <span class="brand-title">Trattoria Arki</span>
+        <span class="brand-sub">Pizza e Cucina Emiliana</span>
+      </div>
+    </div>
+    <nav class="cat-nav" aria-label="Categorie del menu">
+      <a href="#antipasti">Antipasti</a>
+      <a href="#primi">Primi</a>
+      <a href="#secondi">Secondi</a>
+      <a href="#dolci">Dolci</a>
+      <a href="#pizze">Pizze</a>
+    </nav>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 pt-8 pb-16">
+    <section id="antipasti" class="menu-section"><h2>Antipasti</h2><div class="dish-list" id="sec-antipasti"></div></section>
+    <section id="primi" class="menu-section"><h2>Primi Piatti</h2><div class="dish-list" id="sec-primi"></div></section>
+    <section id="secondi" class="menu-section"><h2>Secondi Piatti</h2><div class="dish-list" id="sec-secondi"></div></section>
+    <section id="dolci" class="menu-section"><h2>Dolci</h2><div class="dish-list" id="sec-dolci"></div></section>
+    <section id="pizze" class="menu-section"><h2>Pizze</h2><div class="dish-list" id="sec-pizze"></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="max-w-2xl mx-auto px-4 py-10 grid gap-8 sm:grid-cols-3">
+      <div>
+        <h5>Trattoria Arki</h5>
+        <p>Pizza e Cucina Emiliana</p>
+      </div>
+      <div>
+        <h5>Dove siamo</h5>
+        <p>Via Fratelli Cervi 216<br>Reggio Emilia<br>(zona Pieve Modolena)</p>
+      </div>
+      <div>
+        <h5>Prenotazioni</h5>
+        <p>Telefono / WhatsApp<br><a href="tel:+393762605520">+39 376 260 5520</a></p>
+      </div>
+    </div>
+    <div class="max-w-2xl mx-auto px-4 pb-6">
+      <ul class="foot-links">
+        <li><a href="#antipasti">Antipasti</a></li><li><a href="#primi">Primi</a></li><li><a href="#secondi">Secondi</a></li><li><a href="#dolci">Dolci</a></li><li><a href="#pizze">Pizze</a></li>
+      </ul>
+      <p class="copy">© <span id="year"></span> Trattoria Arki - Pizza e Cucina Emiliana. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <div id="dishModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <button id="closeModal" class="modal-close" type="button" aria-label="Chiudi">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-photo"><img id="modalImg" src="" alt="" decoding="async"></div>
+      <div class="modal-body">
+        <p id="modalCategory" class="modal-cat"></p>
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <p id="modalDescription" class="modal-desc"></p>
+        <div class="modal-allergens"><h4>Allergeni</h4><div id="modalAllergens" class="chips"></div></div>
+        <div class="modal-price-row"><span>Prezzo</span><strong id="modalPrice"></strong></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Menu.js"></script>
+</body>
+</html>
